@@ -67,7 +67,7 @@ These steps are repeated for each hidden layer. In this case there is only 1 hid
 
 ##The output
 
-The output layer is calculated in the same steps with the output being a 5000X10 matrix where each column corresponds to the network's estimate on the likelihood the number is 0-9
+The output layer is calculated in the same steps with the output being a 5000x10 matrix where each column corresponds to the network's estimate on the likelihood the number is 0-9
 ```{r}
 a2 <- cbind(constant$V1, g)
 z2 <- a2 %*%t(Theta2)
