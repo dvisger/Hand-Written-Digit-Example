@@ -14,7 +14,7 @@ load("data.Rdata")
 load("weights.Rdata")
 ```
 
-X represents the input data of 5000 images. It is a 5000 row by 400 column matrix. Each row represents a 20x20 (ie 400 data points) image of a handwritten number from 0-9.
+X represents the input data of 5000 images. It is a 5000 row by 400 column matrix (5000x400). Each row represents a 20x20 (ie 400 data points) image of a handwritten number from 0-9.
 
 If we look at one row and reshape it, we can see an example:
 
@@ -50,7 +50,7 @@ In this example we are using a pre-trained network, where the weights have been 
 
 There are 3 layers in the network. The first are the column values for each input of X (400 nodes), the second is the hidden layer with 26 nodes, and the third is the output layer with 10 nodes.
 
-The weights (parameters) are in Theta1 and Theta2. Theta1 is a matrix of 401x25. Theta2 is a matrix of 25x10.
+The weights (parameters) are in Theta1 and Theta2. Theta1 is a matrix of 25x401. Theta2 is a matrix of 10x26.
 
 Calculating the predicted values
 --------------------------------
