@@ -49,8 +49,7 @@ The weights (parameters) are in Theta1 and Theta2. Theta1 is a matrix of 25x401.
 
 To use an intercept term and do the matrix matrix multiplication we add a 1 for the input data X (401):
 ```{r}
-constant <- as_data_frame(cbind(1, 1:5000))
-a1 <- cbind(constant$V1, X)
+a1 <- cbind(1, X)
 ```
 
 To shape the data in the way we need for the next layer we matrix multiply by a transposed Theta1 [5000x401] X [401x25] = [5000x25]:
@@ -69,7 +68,7 @@ These steps are repeated for each hidden layer. In this case there is only 1 hid
 
 The output layer is calculated in the same steps with the output being a 5000x10 matrix where each column corresponds to the network's estimate on the likelihood the number is 0-9
 ```{r}
-a2 <- cbind(constant$V1, g)
+a2 <- cbind(1, g)
 z2 <- a2 %*%t(Theta2)
 g2 <-  1.0 / (1.0 + exp(-z2))
 ```
